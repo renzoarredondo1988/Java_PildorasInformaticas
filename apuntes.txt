@@ -1,0 +1,1098 @@
+JRE Java Runtime Environment (Entorno de ejecucion Java)
+Se instala porque Java es un lenguaje multiplataforma (es valido para cualquier plataforma - Windows - Linux - etc)
+Un programa en Java debe ser Compiolado para posteriormente ser Interpretado
+Compilar: pasar un programa de codigo fuente a codigo maquina
+Codigo fuente: lenguaje de programacion
+Codigo Maquina: codigo binario
+Java genera un fichero intermedio (bytecodes) que no llega a ser codigo fuente ni codigo maquina. Es un lenguaje intermedio (extension .class) y se le aplica una maquina virtual que traduce a codigo maquina (JRE), independiente del sistema operativo (ventaja) pero obliga a instalar si o si el JRE-
+En Java se lo llama "Write once, run everywhere" (escribelo una vez, ejecutalo donde sea)
+
+Clase 3
+
+Permite hacer 3 tipos de programas
+Aplicaciones de consola: programas que se van a ejecutar o se van a ver en un programa de comandos
+Aplicaciones de proposito general: programas que pueden construirse para distintos propositos.
+Applets: programas que se ejecutan dentro de un navegador
+
+Anatomia de un programa Java
+Java es "case sensitive" (distingue mayusculas de minuscula)
+modificador de acceso
+clase - Todo programa Java debe estar al menos dentro de una clase (hay varias). Sabemos que esta dentro de una clase por las llaves "{". Toda llave que se abre en Java debe cerrarse.
+Conviene que las llaves tengan un poco de sangria.
+
+Linea de codigo -> lo que escribimos en una fila (accion)
+
+Para empezar a programar
+New -> Java Project
+Luego sobre ese proyecto hay que crear una clase
+en panel de izquierda, seleccionamos y click boton derecho
+New -> Class
+Darle un nombre a la clase -> No debe llevar espacios, no caracteres extraños, debe empezar con mayuscula, no debe empezar numeros
+
+Cuando programamos, las subrayadas rojas indican alguna clase de error.
+Las lineas verdes indican que falta seguir escribiendo. si apretas Tab te lleva ahi. Es bastante confiable.
+
+En java, todas las sentencias terminan en punto y coma (;)
+
+Cuando no has guarado el archivo, te sale un asterisco arriba donde esta el nombre de la clase. Para guardas File->Save o Ctrl + S
+
+Para correr el programa hay que abrir la pantalla de consola -> Windows -> Show View -> Console
+La pantalla de consola muestra los resultados del programa.
+Para correr el programa hay que poner el cursos dentro de cualquier parte de la programacion y le das play al botoncito de play.
+
+
+Clase 5
+
+Tipos de datos en Java
+Tipos primitivos
+
+- Enteros (numeros como el 8, 44, etc)
+	.	Int: 4 bytes de espacio para almacenamiento. Desde -2.147.483.648 hasta 2.147.483.648
+	. 	Short. 2 bytes de espacio. Desde -32.768 hasta 32.767
+	.	Long: 8 bytes. Numeros muy grande. Sufijo L. Para indicar que es un dato del tipo L. ej.500000000000000L.
+	.	Byte: 1 byte de espacio. desde -128 hasta 127.
+
+- Coma flotante (decimales)
+	.	Float: 4 bytes de espacio para almacenamiento. Aprox. 6 a 7 cifras decimales. Sufijo F. Ej. 3.25F
+	.	Double: 8 bytes. Aprox. 15 cifras decimales significativas.
+	.	Char: para representar caracteres. Ej. `a` (entre comillas simples). Si se quiere saber mas buscar en la red (no entra en el curso)
+	.	Bulear. 2 unicos datos. True/False.
+
+Variables en Java. Espacio en la memoria del ordenador donde se almacenara un valor que podra cambiar durante la ejecucion del programa. (varia)
+
+Java es estricto con las variables. Hay que iniciarlas. Darles un nombre y valor. Las variables se nombran en la memoria RAM.
+Ej. 
+int=num;
+num=4;
+
+o
+int num=5
+
+La RAM es una memoria volatil de la pc que se borra cuando se apaga la misma. La RAM la pc la utiliza para procesos internos. 
+Cuando declaramos a una variable, lo que hacemos es reservar un espacio dentro de a ram. Cuando la iniciamos lo que hacemos dandole un valor en el interior de ese espacio.
+Cuando la variable es Long, por ej, ocupa mas espacio de la RAM.
+Hay que saber utilizar los datos para optimizar. Por ej, no coviene usar el 5 con L. sino ajustar al mas chico. el 5 se ajusta mas al byte.
+Ej. Long num=5L
+byte num=5 mejor optimizacion.
+Para no errarle es comun usar el int porque las pcs ahora vienen potentes. Pero si hubiera que optimizar hay q ajustar.
+Si declararamos todas como Long, reservas mas espacio del necesario, consumiendo mucho mas recursos RAM y queda menos espacio disponible. Va a andar todo mas lento.
+Como comodin:
+int para enteros
+double para decimales
+char
+bulear.
+
+Toda aplicacion Java se crea desde un metodo Main (cuando creamos clase, un tilde en una de las opciones)
+
+Clase 6
+
+Herramientas de eclipse: por ej.
+byte edad;
+edad=35;
+
+Tira un foco amarillo a la izq que da una advertencia. Indica que ese valor no se ha usado.
+
+System.out.println(edad) Ahi ya queda usada la variable y sale el globo amarillo
+
+Cuando el foco es rojo significa que hay error de sintaxis. Por ej si borrara alguna de las lineas anteriores.
+
+Todo codigo se interpreta de arriba apara abajo. Es decir que el valor de la variable va a ser el ultimo.
+
+Java es un lenguaje de programacion orientado a objetos.
+
+Los objetos tienen propiedades y tienen metodos (cosas que puede hacer)
+
+Se puede agregar comentarios en las diferentes lineas de programacion
+ 
+Ej. //mensaje para una sola linea
+	/* el mensaje /*
+
+Clase 7
+
+Declaracion de constante
+
+Constante: espacio en la memoria de la pc que se almacenara en un valor que no cambiara en la ejecucion del programa
+
+Para crear una constante hay que agregar la palabra "final" antes de la constante
+Ej. final double a_pulgadas=2,54;
+
+Operadores (en el video salen los simbolos de cada uno para usarlos en la programacion)
+	.	Aritmeticos (suma, resta, multiplicacion, division)
+	.	Logicos, relacionales y booleanos (mayor que, menor que, etc)
+	.	Incremento y decremento (Incremento, Decremento)
+	.	Concatenacion (sirve para unir valores, como un texto con un valor numerico, une o concatena) Ej: System.out.println("En "+cm+" cm hay "+resultado+" pulgadas");
+
+Si usamos el comentario // antes de la linea, la inhabilitamos momentaneamente. Esto sirve para hacer prueba y error momentaneamente para probar un 
+programa, si luego lo borras volves a habilitar la linea.
+
+Si queremos usar decimales por ej. en una division, todas las variables tienen que ser formato decimal (ej. double), sino, aproxima a n°entero.
+
+Clase 8 
+
+Diferencias entre variables y constantes
+
+Excepcion y error en Java es mas o menos lo mismo en Java.
+Pueden ser errores en compilacion o en ejecucion.
+
+Se pueden asignar varias variables en una linea
+ej. inst operador1,operador2,resultado;
+y despues darle valor
+operador1=1
+operador2=3
+operador3=5
+
+Clase 9 Otros calculos numericos. Clase Math.
+
+Hay dos tipos de clases
+Clases propias
+Son las que hacemos nosotros. Como las que vine haciendo hasta ahora.Clases elaboradas por nosotros
+
+Clases predefinidas.
+Clases ya prearmadas por Java. Ya vienen construidas segun lo que necesitemos.
+Ej. Clase String. sirve para manejar cadenas de caracteres
+Clase Math. para calculos matematicos
+Clase Array permite manejar matrices
+Clase Thread permite programacion concurrente.
+Hay cientos mas. Son las mas usadas las anteriores.
+
+Como es imposible recordar todas lsa clases con sus respectivos metodos, viene una biblioteca que se llama API JAVA, a la cual habra que consultar recurrentemente cuando nos olvidemos.
+Pones en google API java y te sale. Hay que saber usar la biblioteca.
+
+El numero de edicion de la bilioteca te indica la actualizacion. Normalmente mientras se va actualizando se van agregando nuevas clases como consecuencia de las necesidades que van apareciendo.
+
+Se puede descargar dicha biblioteca para tenerla en el disco duro, pero lo ideal es via online porque siempre esta actualizada.
+
+Clase 10 Explicacion de refundicion
+
+Consiste en convertir un tipo de dato en otro
+
+Ej. int resultado=(int)Math.round(num1);
+
+El Math Round devuelve en Long. si ponemos en este caso (int) antes convertimos el valor, con riesgo de perder informacion.
+
+Clase 11
+
+Manipulacion de cadenas - Clase String
+
+Sirve para almacenar caracteres (como por ejemplo palabras, es decir, no numeros o variables como veniamos almacenando antes)
+
+Ej. String mi_nombre="Renzo"; 
+Donde mi nombre es un objeti (instancia ejemplar) de la clase String.
+
+Instanciar una clase -> es darle un nombre a un objeto donde le daremos un valor, o ejemplificar
+
+- Metodos mas usados
+	.	length(): devuelve la longitud de una cadena de caracteres
+	.	charAt(n): devuelve la posicion de un caracter dentro de una cadena,
+	.	substring(x,y):
+	.	equals(cadena): devuelve true o false
+
+Recordar que cuando nos sale la ayuda a la derecha, apretando el tab vemos la ayuda
+
+Clase 12
+
+Mas metodos Srting
+
+Cuando generamos una clase nueva, en la consola queda lo ejecutado en alguna clase anterior. Si quisieramos borrarla, en la consola a la derecha hay una x que al apretarla la borra ("remove Launch").
+Aprendemos a usar metodos substrig
+metodo frase.substring()
+
+Clase 13
+
+API Java -> Bibliotecas de clases que vienen de forma predefinida de Java para que las podamos usar en Java.
+
+En Java a las clases de Java se las organiza en paquetes (son carpetas que mantiene todo junto organizado)
+
+Java organiza los paquetes por orden de jerarquia.
+
+Dentro de un paquete puede haber un subpaquete.
+
+Las clases se organizan por paquetes para organizar las clases, para evitar conflictos de nombres (no pueden haber dos clases de java con el mismo nombre en el mismo paquete, pero si en dif.paquetes,
+para controlar la visibilidad de las clases)
+
+El paquete principal es aquel que no necesita ninguna activacion para empezar a usarlo (Java.lang), como String,System,Math,Thread.
+
+Pero si queremos usar una clase de otro paquete, hay que activarlo previamente.
+
+Cuando vas a utilizar una clase que no pertenece al Java.lang hay que utilizar lo que se conoce como directiva import
+
+Antes de cualquier instruccion que pueda tener el programa es dar la import y el nobre del paquete
+
+Ej. import java.util.*;
+
+al poner el asterisco le estamos diciendo que vamos a utilizar todas las clases del paquete java.util
+
+Pero si quisieramos utilizar una sola clase podriamos hacer
+import java.util.Scanner;
+
+Consumiriamos menos recursos. A efectos practicos normalmente pones asterisco para no controlar que clase vas a usar.
+import java.util.Scanner;
+import java.util.Locale;
+
+Ahi activo dos clases de java.util
+
+Si no sabemos a que clase pertenece la clase, te vas a la API, pones arriba a la izquierda pones toda la API, la localizas abajo, le das click y al principio a la derecha va a salir a que clase pertenece.
+
+Eclipse tambien ayuda cuando ya tenes toda la programacion echa, te vas a Source->Organize Imports, y te activa los imports que necesitas.
+
+Clase 14
+
+Como conseguir entrada y salida de datos
+
+Salida de datos es informacion que existe en nuestro programa y sacarla para que la podamos ver. Hasta ahora hemos usado System.out para verlo en la consola del sistema.
+
+Para introducir datos fuera del programa (entrada) es conveniente realizar una IGU (interfaz grafica de usuario)
+
+Una IGU es crear como una especie de formulario. 
+
+Existen clases que nos permiten realizar entradas. Por ej. la clase Scanner. JOptionPane (estatico)
+
+Recordatorio: meotodo estatico -> hay que poner el nombre de la clase antes del metodo. 
+
+Un constructor es un metodo especial (poseen el mismo nombre que la clase). Segun el argumento que pongas dentro del constructor el objeto tendra un estado u otro.
+
+Vamos a usar el metodo Scanner
+
+Basicamente usa como entradas los datos que nosotros pongamos en la consola,
+
+Ej.
+	Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Introduce tu nombre, por favor");
+		
+		String nombre_usuario=entrada.nextLine();
+		
+		System.out.println("Introduce edad, por favor");
+		
+		int edad=entrada.nextInt();
+		
+		System.out.println("Hola"+nombre_usuario+" el año que viene tendras "+(edad+1)+" años");
+
+(edad+1) lo pongo entre parentesis para que no concatene, sino que a edad le sume 1.
+
+Vemos un cuadrado rojo a la derecha abajo, significa que el programa esta a la espera
+
+Cuando vamos colocando los datos en la consola (se vera en verde porque son entradas, diferenciando el negro de las salidas), segun corresponda el metodo (int si es numero, string para palabras, etc)
+ira corriendo el programa, como ya sabemos, de arriba hacia abajo.
+
+Clase 15
+
+Nombre de la clase: entrada_ejemplo2
+
+Vemos entradas con el JOptionPane
+
+Recordatorio: La API te dice del lado izquierdo de los Methods que variable te devuelve. Es decir, si dice String te devuelve un texto, por lo que cuando solicitamos
+una variable usando dicho metodo, tiene que ser String
+
+En este video explica el metodo parseInt, que basicamente lo que hace es poder pasar un texto a numero. Poruqe por ej en el JOptionPane cuando vos pones la edad,
+por ej, aunq pongas un numero te lo detexta como texto (string)
+
+Tambien explica como redondear decimales de una variable double
+Nombre de clase Entrada_Numeros
+
+System.out.printf("1.2f",x/3);
+
+siempre entre comillas, se coloca 1."la cantidad de decimales que queremos"
+ej. 1.2 dos decimales.
+Del otro lado de la coma, va lo que queremos resolver.
+
+Clase 16
+Condicionales y bucles - Flujos de control
+Los flujos de control son el orden en que un programa Java hace su ejecucion.
+De momento hemos visto que la ejecucion comienza por el metodo main. De ahi, se ejecutan las lineas de control de arriba abajo.
+Las estructuras de control nos permite hacer saltos en las lineas o repetir alguna/s.
+
+Anteriormente en Visual Basic se usaban codigos goto y gosub. Pero se generaba el codigo spaguetti (malo)
+
+Cuando querramos dar un salto usamos un condicional.
+Cuando queremos repetir codigos usamos buces.
+
+Condicionales en java:
+If -> se puede acompañar por la estructura else
+swithc -> idem default
+
+En esta condicion, funciona siempre que lo que este dentro de la llave sea cierto, en caso contrario ignorara la linea
+
+import java.util.*;
+
+public class Evalua_edad {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Introduce tu edad, por favor ");
+		
+		int edad=entrada.nextInt();
+		
+		if(edad>=18) {
+			
+			System.out.println("Eres mayor de edad ");
+		}
+	}
+
+}
+
+
+El else debe ir siempre despues del if. No puede ir un else sin un if antes.
+Podemos deducir de else como una traduccion "y si no es verdad".
+Es decir, si lo que esta dentro del if es verdad,tira un resultado en pantalla. Else.. tira otra.
+Es decir, en este caso, si el if es verdad, ignora la linea del else. Sino, salta el if, y ejecuta el else.
+public class Evalua_edad {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Introduce tu edad, por favor ");
+		
+		int edad=entrada.nextInt();
+		
+		if(edad>=18) {
+			
+			System.out.println("Eres mayor de edad ");
+		}
+		else {System.out.println("Eres menor de edad ");
+	}
+
+}
+}
+
+Con el else if podemos ir ejecutando lineas e ir viendo que condicion se cumple, siempre de arriba para abajo. Al cumplirse, el programa salta las demas lineas.
+Sino, agarra la que va.
+Ej.
+
+public class Evalua_edad {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Introduce tu edad, por favor ");
+		
+		int edad=entrada.nextInt();
+		
+		if (edad<18) {
+			System.out.println("Eres un adolescente");
+		}
+		
+		else if(edad<40){
+			
+		System.out.println("Eres joven");
+		}
+		else {
+			
+			System.out.println("cuidate");
+		}
+	}
+}
+
+
+Clase 18
+
+Seguimos viendo condicionales
+
+cunado en el system.out.println colocamos una barra invertida y ene ("\n") nos da la respuesta un renglon mas abajo
+
+siempre que usemos el metodo case hay que finalizarlo con break
+
+System.out.printf("%1.2f") -> el %1.2f nos indica la cantidad de decimales que queremos que tenga el numero
+
+
+En el caso de los metodos case, tenemos el "default" que cumple la misma funcion que el else en el if.
+
+Es decir, cuando ninguna de las opciones anteriores es correcta, da salida a lo que hayamos seleccionado.
+
+Ejemplo que hubieran 4 case y seleccionaramos el 5.
+
+La exclusion break al final de cada case nos asegura que una vez seleccionada la opcion que corresponda en cada case, no siga con otro case mas abajo (porque el programa se ejecuta de arriba para abajo)
+como podria pasar en algun caso rebuscado.
+
+import java.util.*;
+import javax.swing.*;
+
+
+public class Areas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Elije una opcion:\n1: Cuadrado \n2: Rectangulo \n3: Triangulo \n4: Circulo");
+		
+		int figura=entrada.nextInt();
+		
+		switch(figura) {
+		
+		case 1:
+			
+			int lado=Integer.parseInt(JOptionPane.showInputDialog("Introduce el lado"));
+			
+			System.out.println("El area del cuadrado es "+Math.pow(lado,2));
+			
+			break;
+			
+		case 2:
+		
+			int base=Integer.parseInt(JOptionPane.showInputDialog("Introduce la base"));
+			
+			int altura=Integer.parseInt(JOptionPane.showInputDialog("Introduce la altura"));
+			
+			System.out.println("El area del rectangulo es "+base*altura);
+			
+			break;
+			
+		case 3:
+			
+			int base1=Integer.parseInt(JOptionPane.showInputDialog("Introduce la base del triangulo "));
+			
+			int altura1=Integer.parseInt(JOptionPane.showInputDialog("Introduce la altura del triangulo "));
+			
+			System.out.println("El area del triangulo es "+(base1*altura1)/2);
+			
+			break;
+			
+	case 4:
+			
+			int radio=Integer.parseInt(JOptionPane.showInputDialog("Introduce el radio"));
+			
+					
+			System.out.print("El area del circulo es ");
+			
+			System.out.printf("%1.2f",Math.PI*(Math.pow(radio,2)));
+			
+			break;
+			
+			default:
+				System.out.println("La opcion no es correcta");
+			
+			
+			
+			
+			
+		}
+		
+		
+
+	}
+
+}
+
+
+Clase 19
+
+(nombre de la clase: Adivina_numero) -> Vemos el bucle While
+
+Recordatorio, no recuerdo que lo haya explicado:
+
+Tipos de bucles:
+- Bucles indeterminados
+	.While
+	-Do while ->se parece al while, pero este evalua la condicion despues de ejecutado el codigo anterior.
+- Bucles determinados
+	. For
+	. For - each
+
+Bucles
+
+Recordatorio -> refundicion -> convertir un tipo de dato, en otro. Por ejemplo, un numero decimal a entero (double a int)
+
+Recordar != significa que es igual a 0 (recordar clase de operadores)
+
+usamos como metodo de bucle el while
+
+Todo las condiciones van a ir dentro de las llaves del while
+
+Recordatorio: operador incremento "++"
+
+Ej ejercicio que sera modificado en la clase 20
+import java.util.*;
+
+public class Adivina_numero {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int aleatorio=(int)(Math.random()*100);	
+		
+		Scanner entrada=new Scanner(System.in);
+		
+		int numero=0;
+		
+		int intentos=0;
+		
+		while (numero!=aleatorio) {
+			
+		intentos++;
+			System.out.println("Introduce un numero, por favor ");
+			
+			numero=entrada.nextInt();
+			
+			if(aleatorio<numero) {
+				
+				System.out.println("Mas bajo");
+				
+			}
+			
+			else if (aleatorio>numero) {
+				System.out.println("Mas alto");
+								
+			}
+							
+		}
+		
+		System.out.println("Correcto. "+"Lo has conseguido en "+intentos+" intentos.");
+		}
+			
+}	
+			
+
+Clase 20
+
+Vemos el bucle do while
+. Sintaxis
+-Do{
+Linea1
+Linea2
+...
+Linea n
+}while(condicion); la diferencia del while lo q asegura es q aunq la condicion de entrada sea falsa, lo q hay dentro del bucle se ejecute al menos una vez. En el while si es falsa no ejecuta.
+
+Recordatorio: iniciar una variable es darle un nombre.Ej.
+int numero;
+Declarar una variable es definirla, darle un valor inicial
+numero=5;
+o lo que es lo mismo
+int numero=5
+Java siempre exige que para usar una variable, siempre hay que iniciarla
+
+Clase 21
+Nombre de la clase "Uso_bucle_For"
+
+Bucle determinado "For"
+Sintaxis
+- for(inicio del bucle; condicion; contador bucle){
+Lineas 1
+Linea 2
+---
+Linea n
+}
+
+Por convencion, en los libros de java siempre se encontrara a las variables que se usan con los bucles de for con la letra "i" o "j" o "z"
+
+Vamos con un ej. de imprimir en pantalla el nombre 10 veces
+
+public class Uso_bucle_For {
+
+	public static void main(String[] args) {	
+		// TODO Auto-generated method stub
+		
+		for(int i=0;i<10;i++) {
+			
+			System.out.println("Renzo");
+
+	}
+}
+
+}
+
+Al iniciar el for, decimos que la variable i inicia en 0. Como se cumple la condicion i<10, lee lo que esta dentro de la llave. En este caso, imprimir en pantalla Renzo.
+Vuelve al inicio del bucle y le suma un contador bucle i++. Examina todo y asi sucecivamente hasta que se de la condicion-
+Algo a saber, si quisieramos incrementar de 2 en 2 se podria de la siguiente maneta
+i=+=2
+
+Dentro de este mismo video hacemos otro ejercicio que se llama "Comprueba_mail"
+
+Recordatorio
+
+Si usamos un /*antes de una linea y cerramos con */, logramos "ignorar o sacar del programa" esa o esas linea/s, de modo que nos permite hacer pruebas.
+A esto se le llama comentar una declaracion
+
+
+Video 22
+Continuamos viendo el bucle for
+Basicamente exigimos que el correo solo tenga un @ y al menos un punto. se puede mejorar.
+creamos la clase "Factorial"
+
+Recordar que al declarar una variable Long hay q poner un sufijo L. Ejemplo
+Long resultado=1L
+
+
+Video 23
+Matrices -> se la suenen denominar Arrays, Arreglos
+
+Una matriz es una estructura de datos que contiene una coleccion de valores del mismo tipo-
+Sirve para almacenar valores que tienen alguna relacion entre si
+
+la sintaxis es
+
+- Declaracion: int[] mi_matriz=new int[5];
+int es el tipo de matriz
+mi_matriz es el nombre de la matriz
+int[5] n° de valores que almacena la matriz
+
+Dentro de las matrices cada variable tiene una posicion (arrancando desde el 0)-
+Al igual que las constantes, las matrices se inician y declaran, y se puede hacer en una misma linea o en varias.
+Con el bucle for se utiliza generalmente para ver los valores de una matriz y para rellenar tmb.
+
+Nombre de la clase Uso_Arrays
+
+Con lenght podemos determinar la cantidad de indices que tiene una matriz.
+
+Video 24
+Matrices 2 -> bucle For Each -> dar traduccion en la lectura del programa "por cada"
+
+Se declara la matriz dentro del for con el tipo de variable que corresponda.
+
+Por ejemplo, en el caso de los nombres de los paises, las variables son del tipo String, entonces queda:
+
+for(String elemento:paises){
+System.out.println(elemento);
+}
+Nombre de la clase: Uso_Arrays2
+
+Video 25
+Matrices 3 ->Matrices bidimensionales
+Nombre de la clase: Arrays_bidimensionales
+
+Dijimos que un array o matriz es una especie de gran variable que tiene varios valores
+Cuando hablamos de un array bidimensional estamos diciendo que dentro de la posicion de un array existe otro array con mas posiciones.
+
+Definimos una matriz de dos dimensiones con dos corchetes
+Ej
+int[][]
+En un array bidimensional, con el bucle for recorremos con el primero la primer dimension
+
+Cuando hay un bucle for dentro de un bucle for, la pc no vuelve a leer el primer bucle hasta que no resuelve el bucle que esta dentro
+
+Video 26
+
+Seguimos con matrices bidimensionales
+
+Nombre de la clase con ejercicio de array: Ejemplo_Array_2d
+
+
+Video 27
+
+Programacion Orientada a Objeto (POO)
+Java es 100% orientada a objeto
+
+Lenguajes de programacion antiguos ->Programacion orientada a procedimientos (muy dificultoso para encontrar errores, agregar o quitar cosas, etc)
+Ej Basic, Fortran, Cobol, etc...
+
+Lenguajes de programacion modernos ->Programacion orientada a objeto (se le trato de dar a los lenguajes las caracteristicas de un objeto real)
+Los objetos tienen un estado, un comportamiento (¿que puede hacer) y unas propiedades.
+
+Ej. coche -> estado: parado, andando, estacionado
+propiedades: color, peso etc
+comportamiento: arrancar, frenar, girar, etc.
+
+Ventajas de la POO
+Programas divididos en trozos, partes, modulos o "clases". Modularizacion -> Dividir un gran programa en varias partes para deps unirlos entre si. Esto permite "seccionar" y si hay algun error, mas facil de encontrar.
+Reutilzable. "Herencia".
+Si existe fallo en alguna linea del codigo, el programa seguira con su funcionamiento. "Tratamiento de excepciones".
+. Encapsulamiento.
+
+Todo esto nos lleva a nuevos terminos con palabras.
+
+Video 28
+POO II
+
+Terminologia
+
+- Clase
+
+- Objeto
+
+- Ejemplar de clase. Instancia de clase. Ejemplarizar una clase. Instanciar una clase.
+
+- Modularizacion
+
+- Encapsulamiento/encapsulacion
+
+- Herencia
+
+- Polimorfismo
+
+Una clase es un modelo donde se redactan las caracteristicas comunes de un grupo de objetos. Por ej. los autos de marca distinta que comparten la misma plataforma (parte de abajo del auto). La plataforma es la case, los autos los objetos.
+
+Los objetos son las partes de una clase, tienen propiedades (atributos), comportamiento (que es capaz de hacer).
+
+Viendo el ejemplo del coche, podemos programar una clase coche
+
+pseudocodigo-> por decirlo de alguna forma, es mitad de codigo y mitad lenguaje programacion (como el spanglish) mitad lenguaje humano mitad lenguaje de programacion
+
+Ej, noomenclaruta del punto -> nombre.propiedad=valor
+Ej propiedades
+Renault.color="rojo"
+Renailt.peso=1500
+
+Ej. comportamiento (nombre.comportamiento)
+Renault.arranca();
+Renault.frena();
+Renault.arranca ();
+
+Cuando creamos una clase, veniamos usando el paquete por defecto (sale cartel arriba)
+Crear un paquete significa organizar nuestro codigo en carpetas
+El nombre de los paquetes no debe tener mayusculas, espacios en blanco etc
+
+Hacemos de ejemplo un paquete llamado "poo".
+Nombre de la clase "coche"
+Normalmente en un paquete estan las clases que tienen alguna relacion entre ella
+
+metodo constructor-> es un metodo especial que se encarga de dar un estado inicial a nuestro objeto.
+
+Recordemos que instanciar una clase es asignar un objeto a la calse.
+
+Video 29
+
+Recordar que modularizacion es dividir un programa en trozos (clases), con sus multiples ventajas que esto trae.
+
+Siempre en un programa la ejecucion comienza en la clase que tenga el metodo main (solo una clase la tendra) que es por donde empieza la ejecucion de nuestro programa.
+
+Como lee el programa Uso_Coche 
+
+Primero busca una clase que se llame Coche. Una vez encontrada, lee la clase coche y crea un objeto (Renault) invocando o llamando o ejecutando al constructor de esa clase.
+
+Es decir el new Coche invoca a la linea que indica las propiedades. El operador new llama al constructor dela clase de ese objeto. al llegar al final del constructor, vuelve a la
+linea que sigue, en este caso el print.
+
+Se busca con la modularizacion armar programas complejos en varias clases de pocas lineas, para encontrar errores mas facilmente.
+
+Se podria hacer toda una programacion dentro de un solo fichero (archivo que sale a la izq.en color verde como los ejercicios que veniamos haciendo), pero se desaconseja porque no se esta modularizando.
+
+Metodo-> Conexion de las clases. Una clase principal permite realizar ciertas acciones de otras clases, pero hay ciertas otras
+que solo se podran ejecutar desde cada clase particular. A esto se lo conoce como encapsulacion.
+
+Un ejemplo es que yo cree en una clase constructora como la que estamos haciendo, y diga que el auto tiene 4 ruedas.
+
+Yo podria en cualquier otra clase modificar dicho valor y seria valido. Para que eso no suceda, yo deberia ir a la clase en la que quiero q solo de ahi se pueda
+modificar dicho valor y agregar una encapsulacion.
+Se hace agregando lo que se conoce como un modificador de acceso.
+Para encapsular se coloca private antes de la variable.
+Ej, private int ruedas;
+
+Al encapsular un dato, no es visible en una clase diferente.
+
+Para ver dicha variable en otra clase, hay metodos.
+
+Video 30
+
+Como modificar propiedades
+
+Metodos getters y setters.
+
+Recordatorio: constructor, es el metodo encargado de darle propiedad a un objeto.
+Las formas que tienen las clases de comunicarse entre si es a traves de metodo
+
+- Metodos getter o captadores: captan o establecen el valor de una propiedad
+
+Sintaxis: public dato_a_devolver nombre_metodo(){codigo+return}
+
+- Metodos setters o definidores: establecen o definen el valor de una propiedad. Modifican un valor.
+
+Sintaxis: public void nombre_metodo(){codigo}
+void-> indica que el metodo no devuelve ningun valor al contrario de lo que ocurre con un getter (que tiene una instruccion return)
+
+Video 31
+
+Paso de parametros-> a la vez de llamar a un metodo, le pasas un parametro o valor-
+
+Esto se hace declarando una variable o parametro dentro de los parentesis del metodo setter. Dentro del parentesis se llama zona de parametros
+
+Recordar que cuando el parametro es String, en el metodo habra que colocarlo entre comillas.
+
+Nunca se debe poder modificar la propiedad de un objeto utilizando la instancia del objeto. Por eso, hay que encapsular con el modificador private.
+
+Es lo mismo crear primero un setter que un getter o viceversa.
+
+Podria pasar que el parametro (o argumento) tenga el mismo nombre que la variable de clase. Para diferenciar uno de otro se usa el operador this en el lado de 
+la variable.
+
+Ej. public void configura_asientos(String asientos_cuero) {
+		
+		this.asientos_cuero=asientos_cuero;
+
+El panel Outline, a la derecha, nos permite ver la clase rapidamente.
+Por un lado muestra las variables, y por otro lado los metodos.
+
+Hicimos las propiedades del objeto Coche
+
+Video 32
+
+Recordatorio, en programacion orientada a objetos siempre conviene hacer getter y setters.
+
+Recordatorio, las cadenas de caracteres no se comparan con los simbolos matematicos "==", si no que se usa el metodo equals
+
+Seguimos programando el objeto de tipo coche
+
+Video 33
+
+Vamos a trabajar con un solo fichero fuente (no recomendado por falta de modularizacion)
+
+Construiremos un objeto del tipo empleado
+Con caracteristicas como nombre, sueldo, fecha alta, y sueldo
+
+Recordar que dentro de las carpetas donde se guardan los proyectos hay dos carpetas
+la src donde se guardan los archivos.java que estan los codigos (se pueden abrir con el bloc de notas)
+la bin donde estan los archivos en lenguaje maquina bytecodes
+
+Consultas respondidas
+
+Cuando tenemos un if, lo que haya dentro del parentesis se sobre entiende que es igual a true en booleana
+
+es decir if(asientos_cuero) es lo mismo que
+if(asientos_cuero==true)
+y lo mismo con el else y el false.
+
+Pasa que el profe lo pone asi para mayor entendimiento. Normalmente se suele obviar.
+
+Nombre del fichero: Uso_Empleado
+
+Cuando se programa de esta forma, solo una clase puede ser publica (metodo main)
+Las clases que se creen posterior tienen que estar fuera del main
+
+Recordatorio: El metodo constructor tiene que tener el mismo nombreq eu la clase
+
+Usamos el tipo de clase Date para la fecha. Al no ser un tipo de clase primitivo (no pertenece al java.lang) hay que importar el paquete.
+
+Video 34
+
+Seguimos con el ejercicio del video 33
+
+para armar una fecha, vamos a usar la clase GregorianCalendar que viene predefinida en java.util
+
+Vemos que tiene varios constructores
+
+Recordar que en Java se cuenta desde 0. Es decir un 2 es marzo, porque enero es el 0.
+Recordar que cuando usamos el modificador "new" lo que estamos haciendo es llamar a constructor de la clase
+
+La herencia es una caracteristica muy potente de la POO mediante la cual lo que hace es construir una clase que herede de otra. Es decir, una clase que esta debajo de otra hereda todas las propiedades de otra superior.
+Ej. java.lang.Object
+	java.util.Calendar
+		java.util.GregorianCalendar
+
+getTime() no aparece en a clase GregorianCalendar porque lo hereda de Calendar
+
+Recordar que en los setter el void significa que no devuelve nada (no lleva return)
+
+Video 35
+
+POO IX
+
+Video 36
+
+Como construir constantes.
+
+recordatorios.
+
+En un metodo setter se usa public void -> public era para que se pueda acceder al mismo desde cualquier clase y void porque no arroja ningun resultado
+
+Cuando el campo de clase tiene el mismo nombre que el argumento se usa el this
+
+this.seccion=seccion -> El que lleva el this pertenece a la clase
+
+Recordamos que los getters devuelven siempre datos y siempre llevan un return.
+
+El metodo main es por donde siempre empieza el programa de Java
+
+Con la palabra "final" declaramos una constante, que nos asegura que dicho valor no pueda ser modificado bajo ningun aspecto. Esto puede ser importante cuando la
+programacion tiene muchas lineas y clases.
+
+Ej. private final String nombre;
+
+Estoy diciendo que en el constructor, la variable nombre del tipo String permanecera inalterable.
+
+Por ej. en la clase Math.PI -> pi es una constante (3,14...), tiene que ser inalterable. 
+
+En la api vemos que Pi tiene las caracteristicas:
+
+public static final double Pi
+
+public para que se pueda acceder desde cualquier clase a esta constante. Si tuviera un private no lo podriamos usar desde cualquier clase, solo se podria desde la clase Math.
+final le da el valor constante.
+double es el tipo de dato (decimal)
+PI nombre de la constante.
+
+Video 37
+
+Uso de la palabra Static
+
+Se puede aplicar tanto a variables, como constantes y metodos. En esta clase vemos que significa que la variable sea static.
+
+Con la palabra static lo que hacemos es compartir una variable dentro de la clase a la que pertenece. Es decir, no pertenece a un objeto, sino que sera compartida
+por todos los objetos dentro de esa clase.
+
+La caracteristica de una variable estatica es que hay que poner el nombre de la clase delante de la variable.
+Ej Math.PI
+
+Video 38
+
+Metodos static.
+
+con el \n lo que permite es concatenar todo en un solo prinout.ln y lo que hace es que cuando vas concatenando pega un salto de linea (equivalente a un enter)
+
+ej.
+
+System.out.println(trabajador1.devuelveDatos() + "\n" + trabajador2.devuelveDatos() + "\n" + trabajador3.devuelveDatos() + "\n"
+				+ trabajador4.devuelveDatos() + "\n");
+
+
+Los metodos estaticos no actuan sobre objetos.
+
+La nomenclatura de un metodo estatico seria el nombre de la clase punto el metodo
+Ej. Math.sqrt(9)
+
+Donde Math es el nombre de la clase, sqrt el metodo. 9 el objeto.
+
+Repaso
+
+Todo programa java comienza a ejecutarse en un metodo main. 
+Todo programa java puede tener varias clases. Clases que pueden estar en un mismo fichero o en varios (recomendable).
+El metodo main tiene que ser public no devuelve ningun dato por eso es void (no tiene instruccion return)
+Tiene el modificador de acceso public para que se pueda acceder desde fuera de la clase del que esta definido.
+Static significa que el metodo main es estatico.
+
+Metodos estaticos
+No actuan sobre objetos
+No acceden a campos de ejemplar (variables/constantes declaradas en la clase), a menos que estas tambien sean static.
+Para llamarlos se utiliza el nombre_clase.nombre_metodo
+
+Video 39
+
+Usamos el ejemplo de empleados
+
+Sobrecarga de constructores
+
+Recordamos que los constructores se encargan de dar el estado inicial a nuestros objetos.
+
+Recordamos que un constructor tiene la caracteristica principal de que debe llevar el mismo nombre que la clase a la que pertenece.
+Esto es lo que define un metodo constructor de uno que no es constructor
+
+Una sobrecarga de constructor implica que una misma clase puede tener varios metodos con el mismo nombre de la clase, es decir varios constructores.
+
+Si se utiliza esto, los metodos constructores deben tener distintos numeros de argumentos.
+
+La necesidad surge cuando le queremos dar a un objeto diferentes cantidad de datos.
+
+Como distingue Java a que metodo constructor estamos llamando?
+Va a depender de la cantidad de argumentos
+
+Recordemos que si uno no le da un valor inicial a una variable del tipo objeto, la consola devuelve un null. Es lo que pasa con el metodo usado para la fecha.
+
+el "this" tiene otra funcion tambien. Cuando se desconoce los valores de otros parametros, usando el this se puede setear con valores predefinidos.
+
+Si el metodo constructor no tiene datos, se llama constructor por defecto. (no tiene mucho sentido)
+
+Video 40
+
+Herencia I
+
+Clase "Furgoneta"
+
+Reutilizacion de codigo. La herencia es reutilizar un codigo que comparte las mismas caracteristicas de otra clase.
+
+Es decir, si hay una clase ya creada que tiene las mismas caracteristicas que una nueva, se puede hacer que la nueva herede dichas caracteristicas (objetos y metodos) de la vieja,
+sumada a las propias. Esto se hace con la palabra extends
+
+En el ejemplo, la clase Coche esta en jerarquia de la clase Furgoneta. Coche es una superclase y Furgoneta es una subclase (jerga comun de libros en programacion).
+
+Java no permite herencia multiple. Solo permite heredar de una clase. Para solventar esto se invetaron las interfases.
+
+con la operacion super(); llamamos a la clase constructora de la clase padre o superclase
+
+Video 41
+
+Herencia II
+
+Vemos con el ej. que una clase puede heredar de otra, pero no viceversa. La clase inferior tiene caracteristicas heredadas mas caracteristicas especificas.
+
+Diseño de la herencia. Consiste en aplicar la regla de "Es un..."
+
+Ej, Una furgoneta es un coche? La respuesta es no, eso indica que no hay un buen diseño de herencia.
+
+El diseño tendria que haber sido con una clase Vehiculo, y dentro de esa clase programar las prop. generales que puedan tener los vehiculos dentro de la calle.
+Por ej, color, peso, motor, etc.
+De esa clase, crear una clase coche, furgoneta, camion, moto, etc. donde esten las caracteristicas propias de cada uno de ellos, y todas heredan de vehiculo lo que corresponda.
+
+
+Video 42.
+
+Herencia III
+
+Siempre hay que preguntarse cual va a ser la superclase y cual la subclase. Para eso, usamos la regla "Es un..." en todos los casos.
+
+Cuando creas una clase que hereda de otra y dejas la clase nueva vacia, Java entiende que estamos llamando al constructor por defecto de la clase padre.
+
+Recordar que cuando una clase hereda de otra, lo que hay que hacer es llamar al constructor de la clase padre con la palabra super();
+
+Si se da que dentro del constructor de la clase padre, se solicitaban parametros, deberemos colocar dichos parametros dentro del parentesis.
+
+Si hay mas de un constructor en la clase padre, segun los parametros que coloquemos dentro sera al constructor que llame. Si colocamos una cantidad de parametros que no coincide con ningun constructor, dara error,
+
+Cuando declaras un metodo con el mismo nombre en la clase hija respecto de la clase padre, estas sobreescribiendo, solo para esa clase, un metodo establecido en la clase padre.
+
+con la palabra super podemos pedir que nos almacene el valor de la clase padre.
+
+Video 43
+
+Polimorfismo esta relacionado con lo q se conoce como principio de sustitucion
+Podemos utilizar un objeto de una subclase siempre que el programa espere un objeto de la superclase.
+O lo que es lo mismo que un objeto se puede comportar de diferentes formas dependiendo del contexto. Las variables en jaba son polimorficas.
+
+enlazado dinamico: la maquina virtual de java MVJ es capaz de saber a que metodo tiene que llamar.
+
+Video 44
+
+Herencia. Refundicion de objetos (casting). Clases y metodos final.
+
+La refundicion lo que permite es pasar un objeto que es de una clase inferior en uno de una clase superior. No se podria ser a la inversa por la herencia. Un empleado puede ser jefe, pero un jefe no es empleado. Ej:
+
+Jefatura jefa_Finanzas=(Jefatura) misEmpleados[5];//Casting o refundicion
+
+Concepto de final implicado a clases y metodos.
+
+La clase puede ser final y significa que se termina la herencia. Es decir, no se pueden generar subclases que hereden de dicha clase.
+
+En el caso de los metodos, cumple la misma funcion. Puede llegar a pasar que el mismo metodo se utilice en dos clases diferentes y podria pasar que no querramos que eso suceda.
+Como solucionar si el metodo al que queremos acceder tiene un final? Se puede no heredad de la clase a la q pertenece el metodo o, si hubiera que heredad si o si, se puede cambiar el nombre del metodo en la subclase.
+
+
+Video 45
+Clases abstracta
+En una jerarquia de herencia, la subclase que se encuentra mas abajo es la mas especializada, porque es la q mas metodos tiene (las que heredo mas las propias).
+Un metodo abstracto se crea de la forma:
+public abstract String dameDescripcion();
+Que implica esto? En java, cuando declaras un metodo abstracto estas obligado a generar como abstracta a la clase. Con que la clase tenga 1 solo metodo abstracto la clase tiene que ser abstracta:
+abstract class Persona{.....}
+Esto sale de cuando el metodo no tiene la misma descripcion o la misma devolucion en todas las clases
+
+Ej		Persona
+
+Empleado			Alumno
+Jefatura
+Director
+
+Todas son personas. Todas tienen un nombre. Con un return nimbre devuelve al metodo dameNombre. Pero en descripcion son distintos. Las caracteristicas de un empleado (por ej, el sueldo) no es igual a un alumno q no tiene sueldo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

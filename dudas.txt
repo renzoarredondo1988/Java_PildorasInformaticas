@@ -1,0 +1,35 @@
+Video 22 
+bucle for
+
+import javax.swing.*;
+
+public class Factorial {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int resultado=1;
+		
+		int numero=Integer.parseInt(JOptionPane.showInputDialog("Introduce un numero"));
+			
+		for(int i=numero;i>0;i--) {
+		
+		resultado=resultado*i;
+
+	}
+	System.out.println("El factorial de "+ numero +" es "+resultado);
+	
+
+	}
+	
+}
+
+La duda es porque la variable resultado tiene que ser igual a resultado=resultado*i.
+
+Es decir, porque no le puedo dar a la variable int resultado=1 otro nombre como perro=1 y desp decir resultado=perro*i (tira error eclipse)
+
+Clase 26
+
+El each for bidimensional no quedo taan claro
+
+
