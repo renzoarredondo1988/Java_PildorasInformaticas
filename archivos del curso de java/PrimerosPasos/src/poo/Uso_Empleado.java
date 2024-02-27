@@ -78,8 +78,25 @@ public class Uso_Empleado {//Video 33 en este caso hacemos todo dentro de un mis
 		
 		jefa_Finanzas.estableceIncentivo(55000);//Ahora si puedo usar metodo de la clase Jefatura
 		
+		System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas dias de vacaciones a sus empleados"));//Video 50
 		
+		jefa_Finanzas.establece_bonus(500);
 		
+		System.out.println("El jefe "+jefa_Finanzas.dameNombre()+" tiene un bonus de "+jefa_Finanzas.establece_bonus(500));
+		
+		System.out.println(misEmpleados[3].dameNombre()+" tiene un bonus de "+misEmpleados[3].establece_bonus(200));
+		/*Empleado director_comercial=new Jefatura("Sandra",85000,2012,05,05);
+		Comparable ejemplo=new Empleado("Elizabeth",95000,2012,03,02);
+		
+		if(director_comercial instanceof Empleado) {//Video 50
+			
+			System.out.println("Es de tipo Jefatura");
+		}
+		
+		if(ejemplo instanceof Comparable) {
+			
+			System.out.println("Implementa interfaz Comparable");
+		}*/
 		
 		
 		//Con un bucle for recorremos los arrays creados y le subimos el sueldo Video35
@@ -101,6 +118,16 @@ for(Empleado e: misEmpleados) {
 			
 			e.subeSueldo(5);
 		}
+
+//Video 49 ordenar a todos los empleados por sueldo de menor a mayor
+//Se hace con lo que se conoce como interfaz
+
+Arrays.sort(misEmpleados);//Este metodo sort de la clase Arrays del tipo estatico nos obliga
+//a implementar una interfaz (ver API JAVA clase Arrays metodo sort para objects). Lo tiene
+//q implementar la clase que contiene a los objetos Empleados (interfaz Comparable)
+
+
+
 //Idem con los datos generales
 for(Empleado e: misEmpleados) {
 	
@@ -126,8 +153,10 @@ for(Empleado e: misEmpleados) {
 
 }
 //Video 33
-class Empleado{//Cuando se programa todo dentro de un solo fichero o clase, solo la main
+class Empleado implements Comparable,Trabajadores{//Cuando se programa todo dentro de un solo fichero o clase, solo la main
 	//es la clase publica. Esta clase genera el objeto tipo empleado
+	//Implementamos la interfaz Comparable para poder ordenar todos los empleados segun el sueldo (Video49)
+	//no se pueden instanciar objetos pertenecientes a una interfaz
 	
 	public Empleado(String nom, double sue, int agno, int mes, int dia) {//El constructor recibe parametros
 		//El constructor lo armamos en el video 34
@@ -141,6 +170,11 @@ class Empleado{//Cuando se programa todo dentro de un solo fichero o clase, solo
 		altaContrato=calendario.getTime();//con el objeto calendario, a traves del metodo getTime(), almacenamos los datos de calendario
 		
 		
+	}
+	
+	public double establece_bonus(double gratificacion) {
+		
+		return Trabajadores.bonus_base+gratificacion;
 	}
 	//Variables de clase (o variables de la clase). En POO es lo mismo si se declaran
 	//antes o despues del constructor. (Video 33)
@@ -198,11 +232,26 @@ class Empleado{//Cuando se programa todo dentro de un solo fichero o clase, solo
 	}
 	
 	
-
+public int compareTo(Object miObjeto) {//Este metodo es obligacion implementarlo para una 
+	//interfaz Compare (Video 49)
+	
+	Empleado otroEmpleado=(Empleado)miObjeto;//Refundicion, paso la variable Empleado a una variable
+	//del tipo miObjeto
+	
+	if(this.sueldo<otroEmpleado.sueldo) {//El metodo compareTo devuelve 1 si es mayor, -1 si es menor, o 0 si es igual
+		
+		return -1;
+	}
+	if(this.sueldo>otroEmpleado.sueldo) {
+		
+		return 1;
+	}
+	return 0;
+}//Video 49
 	
 }
 
-	final class Jefatura extends Empleado{//Video 42 - Diseñamos una clase jefe que herede de la clase empleado
+	final class Jefatura extends Empleado implements Jefes{//Video 42 - Diseñamos una clase jefe que herede de la clase empleado
 		//Para ello usamos la pregunta "... es un ... y saber si definimos bien la herencia
 		//Ej. un jefe siempre es un empleado. un empleado no siempre es jefe
 		//Si dejamos la clase sin constructor, java entiende que estamos llamando al constructor por defecto
@@ -219,6 +268,18 @@ class Empleado{//Cuando se programa todo dentro de un solo fichero o clase, solo
 		
 	}
 	
+	public String tomar_decisiones(String decision) {//Video 50. Implementamos la interfaz Jefes
+		//Si implementa la interfaz Jefe si o si tiene que usar el metodo.
+		
+		return "Un miembro de la direccion ha tomado la decision de: "+ decision;
+	}
+	public double establece_bonus(double gratificacion) {//video 51. Al heredar la interfaz jefe de Empleados
+		//nos vemos obligados a utilizar los metodos que hereda
+		
+		double prima=2000;//le damos un extra por ser jefe, a diferencia de lso empleados.
+		return Trabajadores.bonus_base+gratificacion+prima;
+		
+	}
 //Por convencion se colocan primero los metodos y luego las variables de clase
 	
 	public void estableceIncentivo(double b) {
